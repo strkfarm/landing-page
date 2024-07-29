@@ -6,7 +6,7 @@ import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import React from "react";
 
-const animation = { duration: 40000, easing: (t: number) => t };
+export const animation = { duration: 40000, easing: (t: number) => t };
 
 const HeroSection: React.FC = () => {
   const [ref, _slider] = useKeenSlider<HTMLDivElement>({

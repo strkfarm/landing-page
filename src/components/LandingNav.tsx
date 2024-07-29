@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import MaxWidthWrapper from './MaxWidthWrapper';
+import RunningBanner from './RunningBanner';
 
 const navLinks = [
   {
@@ -28,8 +29,10 @@ const navLinks = [
 
 const LandingNav: React.FC = () => {
   return (
-    <nav className="sticky inset-x-0 top-0 z-[100] h-fit w-full bg-[#111119] py-2">
-      <MaxWidthWrapper>
+    <nav className="sticky inset-x-0 top-0 z-[100] h-fit w-full bg-[#111119]">
+      <RunningBanner />
+
+      <MaxWidthWrapper className="py-2">
         <div className="flex h-14 items-center justify-between">
           <Image width={169} height={40} alt="logo" src="/full-logo.svg" />
 

@@ -1,91 +1,92 @@
-"use client";
+'use client';
 
-import React from "react";
+import React, { useRef } from 'react';
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import { useDotButton } from "./EmblaCarouselDotButton";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react';
 
-import { useWindowSize } from "@/lib/useWindowSize";
-import { cn } from "@/lib/utils";
-import { Box, Image as ChakraImage, Link } from "@chakra-ui/react";
-import Autoplay from "embla-carousel-autoplay";
-import useEmblaCarousel from "embla-carousel-react";
-import { isMobile } from "react-device-detect";
-
-const banner_images = [
-  {
-    desktop: "/banners/seed_grant.svg",
-    mobile: "/banners/seed_grant_small.jpg",
-    link: "https://x.com/strkfarm/status/1787783906982260881",
-  },
-  {
-    desktop: "/banners/ognft.svg",
-    mobile: "/banners/ognft_small.svg",
-    link: "https://x.com/strkfarm/status/1788558092109775029",
-  },
-];
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import MaxWidthWrapper from './MaxWidthWrapper';
 
 const Carousel: React.FC = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      loop: true,
-    },
-    [Autoplay({ playOnInit: true, delay: 8000 })]
-  );
-
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
-
-  const size = useWindowSize();
+  const swiperRef = useRef(null);
+  const swiperSlide = useSwiperSlide();
 
   return (
     <MaxWidthWrapper className="z-20 mt-56">
-      <Box className="embla" ref={emblaRef} margin={0} width={"100%"}>
-        <Box className="embla__container">
-          {banner_images.map((banner, index) => (
-            <Box
-              className="embla__slide"
-              position="relative"
-              height={"auto"}
-              key={index}
-              padding={"10px"}
-            >
-              <Link href={banner.link} isExternal>
-                <ChakraImage
-                  src={
-                    (!isMobile && size.width > 450) || size.width === 0
-                      ? banner.desktop
-                      : banner.mobile
-                  }
-                  height={"auto"}
-                  boxShadow={"0px 0px 2px #484848"}
-                  width="100%"
-                  alt="Banner"
-                  style={{ objectFit: "cover", borderRadius: "10px" }}
-                />
-              </Link>
-            </Box>
-          ))}
-        </Box>
-      </Box>
-
-      <div className="mb-[1.5rem] grid justify-center gap-[1.2rem]">
-        <div className="mr-[calc((2.6rem-1.4rem)/2*-1)] flex flex-wrap items-center justify-end gap-[.5rem]">
-          {scrollSnaps.map((_, index) => (
-            <div
-              className={cn(
-                "none flex h-[.8rem] w-[.8rem] cursor-pointer items-center justify-center rounded-full border-[1px] border-[#373A5D] bg-black",
-                {
-                  "bg-[#4D59E8]": index === selectedIndex,
-                }
-              )}
-              key={index}
-              onClick={() => onDotButtonClick(index)}
+      <Swiper
+        ref={swiperRef}
+        navigation
+        pagination
+        loop
+        modules={[Navigation, Pagination]}
+        className="mySwiper relative"
+      >
+        <SwiperSlide className="!flex !items-center !justify-center">
+          <div className="relative h-[343px] w-[90%]">
+            <Image
+              src="/c1.svg"
+              alt="c1"
+              fill
+              objectFit="cover"
+              className="w-[90%] rounded-lg"
             />
-          ))}
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className="!flex !items-center !justify-center">
+          <div className="relative h-[343px] w-[90%]">
+            <Image
+              src="/c1.svg"
+              alt="c1"
+              fill
+              objectFit="cover"
+              className="w-[90%] rounded-lg"
+            />
+          </div>
+        </SwiperSlide>
+
+        <div
+          // @ts-ignore
+          onClick={() => swiperRef?.current?.swiper.slidePrev()}
+          className="absolute left-[4%] top-[45%] z-50 w-fit cursor-pointer rounded-full bg-white p-0.5"
+        >
+          <ChevronLeft className="size-5 text-black" />
         </div>
-      </div>
+
+        <div
+          // @ts-ignore
+          onClick={() => swiperRef?.current?.swiper.slideNext()}
+          className="absolute right-[4%] top-[45%] z-50 w-fit cursor-pointer rounded-full bg-white p-0.5"
+        >
+          <ChevronRight className="size-5 text-black" />
+        </div>
+
+        <div className="mt-3 flex w-full items-center justify-center gap-2">
+          <div
+            className={cn(
+              'size-3 rounded-full border border-[#A1A1ED66] bg-[#A1A1ED1A]',
+              {
+                'border-[#61FCAE] bg-[#61FCAE]': swiperSlide?.isActive,
+              },
+            )}
+          />
+          <div
+            className={cn(
+              'size-3 rounded-full border border-[#A1A1ED66] bg-[#A1A1ED1A]',
+              {
+                'border-[#61FCAE] bg-[#61FCAE]': swiperSlide?.isActive,
+              },
+            )}
+          />
+        </div>
+      </Swiper>
     </MaxWidthWrapper>
   );
 };
