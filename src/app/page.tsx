@@ -1,3 +1,4 @@
+import Carousel from "@/components/Carousel";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import LandingNav from "@/components/LandingNav";
@@ -8,12 +9,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
+    <div> 
       <Image
         src="circular-bg.svg"
         width={1280}
         height={3813}
-        className="absolute left-[50%] z-0 hidden -translate-x-[50%]"
+        className="absolute left-[50%] z-0 -translate-x-[50%]"
         alt="circular-bg"
       />
 
@@ -25,7 +26,7 @@ export default function Home() {
           <Partners />
           <Updates />
           <WhyUs />
-          {/* <Carousel /> */}
+          <Carousel />
           <Footer />
         </div>
       </main>

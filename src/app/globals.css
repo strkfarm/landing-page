@@ -74,3 +74,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.swiper-pagination {
+  display: none;
+}
+
+.swiper-button-next {
+  display: none !important;
+}
+
+.swiper-button-prev {
+  display: none !important;
+}
