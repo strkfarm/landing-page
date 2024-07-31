@@ -85,11 +85,10 @@ const navLinks = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="z-20 mt-[15.5rem] bg-[#111119]">
+    <footer className="z-20 mt-[15.5rem] bg-black">
       <MaxWidthWrapper>
-        {/* className="mx-auto w-full p-4 py-6 lg:py-8" */}
         <div className="gap-3 space-y-6 py-6 md:flex md:justify-between md:space-y-0 lg:py-8">
-          <Image width={246} height={58} alt="logo" src="/full-logo.svg" />
+          <Image width={246} height={58} alt="logo" src="/full-logo.svg" className="my-8 lg:mt-0 mx-auto sm:mr-auto sm:ml-0" />
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-16">
             {navLinks.map((navLink, i) => (
@@ -116,10 +115,11 @@ const Footer: React.FC = () => {
 
       <MaxWidthWrapper>
         <div className="pb-8 sm:flex sm:items-center sm:justify-between">
-          <div className="flex flex-col items-center gap-7 md:flex-row">
-            <p className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <div className="flex flex-col-reverse items-center gap-7 md:flex-row">
+            <p className="text-sm text-gray-500 text-center dark:text-gray-400">
               &copy; 2024 STRKFarm. All right reserved.
             </p>
+            <div className="flex flex-col items-center gap-7 md:flex-row">
             <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
               Privacy Policy
             </p>
@@ -129,6 +129,7 @@ const Footer: React.FC = () => {
             <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
               Cookies Settings
             </p>
+            </div>
           </div>
 
           <div className="mt-6 flex items-center justify-center gap-4 sm:mt-0">

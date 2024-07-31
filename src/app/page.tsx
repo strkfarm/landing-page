@@ -10,17 +10,17 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div> 
-      <Image
+      {/* <Image
         src="circular-bg.svg"
         width={1280}
         height={3813}
         className="absolute left-[50%] z-0 -translate-x-[50%]"
         alt="circular-bg"
-      />
+      /> */}
 
       <LandingNav />
 
-      <main className="grainy-light flex min-h-[calc(100vh-3.5rem-1px)] flex-col">
+      <main className="flex bg-[#111119] min-h-[calc(100vh-3.5rem-1px)] flex-col overflow-x-hidden">
         <div className="z-40 flex h-full flex-1 flex-col">
           <HeroSection />
           <Partners />

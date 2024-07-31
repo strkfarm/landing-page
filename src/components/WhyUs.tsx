@@ -86,8 +86,8 @@ const WhyUs: React.FC = () => {
       </div>
 
       <div className="mt-32 flex flex-col items-center gap-5">
-        <p className="text-center text-2xl text-[#8484C3]">
-          Don&apos;t miss out on this DeFi spring; <br />
+        <p className="text-center text-sm lg:text-2xl text-[#8484C3]">
+          Don&apos;t miss out on this DeFi spring; <br className="hidden lg:block" />
           investing wisely would be the smartest move you&apos;ll make!
         </p>
         <Link
