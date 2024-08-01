@@ -61,9 +61,9 @@ const HeroSection: React.FC = () => {
       <Image
         src="/left-grid2.svg"
         alt="left-grid"
-        width={263}
-        height={263}
-        className="absolute -left-8 top-[18%] lg:hidden"
+        width={163}
+        height={163}
+        className="absolute -left-8 top-[25%] lg:hidden"
       />
 
       <div className="w-[793px] h-[787px] absolute -right-[17%] -top-[20%] rounded-full bg-gradient-to-r from-[#61FCAE1A] to-[#1111191A] blur-3xl" />
