@@ -87,10 +87,10 @@ const Footer: React.FC = () => {
   return (
     <footer className="z-20 mt-24 lg:mt-[15.5rem] bg-black">
       <MaxWidthWrapper>
-        <div className="gap-3 space-y-6 py-6 md:flex md:justify-between md:space-y-0 lg:py-8">
+        <div className="gap-3 space-y-12 py-6 md:flex md:justify-between md:space-y-0 lg:py-8">
           <Image width={246} height={58} alt="logo" src="/full-logo.svg" className="my-8 lg:mt-0 mx-auto sm:mr-auto sm:ml-0" />
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-16">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-16 pl-[16%] sm:pl-0">
             {navLinks.map((navLink, i) => (
               <div key={i}>
                 <h2 className="mb-7 text-sm font-semibold">
