@@ -85,7 +85,7 @@ const navLinks = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="z-20 mt-[15.5rem] bg-black">
+    <footer className="z-20 mt-24 lg:mt-[15.5rem] bg-black">
       <MaxWidthWrapper>
         <div className="gap-3 space-y-6 py-6 md:flex md:justify-between md:space-y-0 lg:py-8">
           <Image width={246} height={58} alt="logo" src="/full-logo.svg" className="my-8 lg:mt-0 mx-auto sm:mr-auto sm:ml-0" />
@@ -120,15 +120,15 @@ const Footer: React.FC = () => {
               &copy; 2024 STRKFarm. All right reserved.
             </p>
             <div className="flex flex-col items-center gap-7 md:flex-row">
-            <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
-              Privacy Policy
-            </p>
-            <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
-              Terms of Service
-            </p>
-            <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
-              Cookies Settings
-            </p>
+              <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
+                Privacy Policy
+              </p>
+              <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
+                Terms of Service
+              </p>
+              <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
+                Cookies Settings
+              </p>
             </div>
           </div>
 
