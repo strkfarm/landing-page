@@ -4,17 +4,30 @@ import React from "react";
 
 const Partners: React.FC = () => {
   return (
-    <MaxWidthWrapper>
-      <h5 className="bg-gradient-to-r from-[#B0F6FF] to-[#61FCAE] bg-clip-text text-center text-lg lg:text-2xl font-medium text-transparent">
+    <MaxWidthWrapper className="relative">
+      <h5 className="bg-gradient-to-r from-[#B0F6FF] to-[#61FCAE] bg-clip-text text-center text-2xl font-medium text-transparent">
         Partners & Backed by
       </h5>
 
-      <div className="mx-auto mt-6 flex w-full max-w-[50rem] flex-wrap items-center justify-center lg:gap-x-32 gap-8">
-        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]"><Image src="/starknet.svg" alt="starknet" fill objectFit="contain" /></div>
-        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]"><Image src="/zklend.svg" alt="zklend" fill objectFit="contain" /></div>
-        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]"><Image src="/nimbora.svg" alt="zklend" fill objectFit="contain" /></div>
-        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]"><Image src="/nostra.svg" alt="zklend" fill objectFit="contain" /></div>
-        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]"><Image src="/pragma.svg" alt="zklend" fill objectFit="contain" /></div>
+      <div className="w-[793px] h-[787px] absolute -left-[25%] top-[15%] rounded-full bg-gradient-to-r from-[#61FCAE1A] to-[#1111191A] blur-3xl -z-50" />
+
+
+      <div className="mx-auto mt-6 flex w-full max-w-[50rem] flex-wrap items-center justify-center lg:gap-x-32 gap-x-7 gap-y-5">
+        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
+          <Image src="/starknet.svg" alt="starknet" fill objectFit="contain" />
+        </div>
+        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
+          <Image src="/nimbora.svg" alt="zklend" fill objectFit="contain" />
+        </div>
+        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
+          <Image src="/nostra.svg" alt="zklend" fill objectFit="contain" />
+        </div>
+        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
+          <Image src="/pragma.svg" alt="zklend" fill objectFit="contain" />
+        </div>
+        <div className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
+          <Image src="/zklend.svg" alt="zklend" fill objectFit="contain" />
+        </div>
       </div>
 
       <div className="mt-32 flex flex-col gap-10 lg:flex-row justify-around rounded-2xl bg-opacity-80 bg-gradient-to-r from-[#2E2C5C] to-[#295446] py-8">

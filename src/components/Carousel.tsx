@@ -21,7 +21,9 @@ const Carousel: React.FC = () => {
   console.log(swiperSlide?.isActive, 'isActive')
 
   return (
-    <MaxWidthWrapper className="z-20 mt-56">
+    <MaxWidthWrapper className="z-20 mt-56 relative">
+      <div className="w-[793px] h-[787px] absolute -left-[25%] -top-[15%] rounded-full bg-gradient-to-r from-[#61FCAE1A] to-[#1111191A] blur-3xl -z-50" />
+
       <Swiper
         ref={swiperRef}
         navigation

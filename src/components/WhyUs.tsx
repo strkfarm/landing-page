@@ -27,8 +27,8 @@ const WhyUs: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-span-1 h-full w-full rounded-xl bg-gradient-to-r from-[#2F245A] to-[#295846] p-0.5">
-          <div className="flex h-full w-full flex-col items-center gap-7 rounded-xl bg-gradient-to-r from-[#171626] to-[#171E23] p-7 shadow-xl md:flex-row">
+        <div className="col-span-1 h-full w-full rounded-xl bg-gradient-to-r from-[#295846] to-[#2F245A] p-0.5">
+          <div className="flex h-full w-full flex-col items-center gap-7 rounded-xl bg-gradient-to-r from-[#171E23] to-[#171626] p-7 shadow-xl md:flex-row">
             <Image
               src="/why2.svg"
               width={169}
@@ -64,8 +64,8 @@ const WhyUs: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-span-1 h-full w-full rounded-xl bg-gradient-to-r from-[#2F245A] to-[#295846] p-0.5">
-          <div className="flex h-full w-full flex-col items-center gap-7 rounded-xl bg-gradient-to-r from-[#171626] to-[#171E23] p-7 shadow-xl md:flex-row">
+        <div className="col-span-1 h-full w-full rounded-xl bg-gradient-to-r from-[#295846] to-[#2F245A] p-0.5">
+          <div className="flex h-full w-full flex-col items-center gap-7 rounded-xl bg-gradient-to-r from-[#171E23] to-[#171626] p-7 shadow-xl md:flex-row">
             <Image
               src="/why4.svg"
               width={169}
