@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   {
@@ -10,53 +11,49 @@ const navLinks = [
     links: [
       {
         label: "Launch Dapp",
-        href: "#",
+        href: "https://app.strkfarm.xyz",
       },
       {
         label: "Defi Spring",
-        href: "#",
+        href: "https://defispring.starknet.io/",
       },
-      {
-        label: "Docs",
-        href: "#",
-      },
+      // {
+      //   label: "Docs",
+      //   href: "#",
+      // },
     ],
   },
   {
     category: "Developers",
     links: [
       {
-        label: "Audit",
-        href: "#",
-      },
-      {
-        label: "Bug bounty",
-        href: "#",
+        label: "Defi Spring",
+        href: "https://defispring.starknet.io/",
       },
       {
         label: "Open-source",
-        href: "#",
+        href: "https://app.onlydust.com/p/strkfarm",
       },
       {
-        label: "Blog",
+        label: "Audit (Coming soon)",
         href: "#",
       },
+      // {
+      //   label: "Blog",
+      //   href: "#",
+      // },
     ],
   },
   {
     category: "General",
     links: [
       {
-        label: "Careers",
-        href: "#",
-      },
-      {
         label: "Branding kit",
-        href: "#",
+        href: "https://drive.google.com/drive/folders/1-D6uizWgdH2XwbP0f3Fc22wQgxhr_RUY?usp=sharing",
       },
       {
         label: "Status page",
-        href: "#",
+        href: "https://strkfarm.betteruptime.com/",
       },
     ],
   },
@@ -64,20 +61,16 @@ const navLinks = [
     category: "Community",
     links: [
       {
-        label: "Discord",
-        href: "#",
+        label: "Telegram",
+        href: "https://t.me/+HQ_eHaXmF-1lZDc1",
       },
       {
         label: "Twitter",
-        href: "#",
+        href: "https://twitter.com/strkfarm",
       },
       {
-        label: "Reddit",
-        href: "#",
-      },
-      {
-        label: "Medium",
-        href: "#",
+        label: "Github",
+        href: "https://github.com/strkfarm/",
       },
     ],
   },
@@ -99,7 +92,9 @@ const Footer: React.FC = () => {
                 <ul className="text-sm text-gray-400">
                   {navLink.links.map((link) => (
                     <li className="mb-4" key={link.label}>
-                      <Link href={link.href} className="hover:underline">
+                      <Link href={link.href} className={cn("hover:underline", {
+                        'opacity-80 hover:no-underline cursor-default': link.label === "Audit (Coming soon)",
+                      })}>
                         {link.label}
                       </Link>
                     </li>
@@ -119,7 +114,7 @@ const Footer: React.FC = () => {
             <p className="text-sm text-gray-500 text-center dark:text-gray-400">
               &copy; 2024 STRKFarm. All right reserved.
             </p>
-            <div className="flex flex-col items-center gap-7 md:flex-row">
+            {/* <div className="flex flex-col items-center gap-7 md:flex-row">
               <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
                 Privacy Policy
               </p>
@@ -129,11 +124,11 @@ const Footer: React.FC = () => {
               <p className="cursor-pointer text-sm text-gray-500 hover:underline sm:text-center dark:text-gray-400">
                 Cookies Settings
               </p>
-            </div>
+            </div> */}
           </div>
 
           <div className="mt-6 flex items-center justify-center gap-4 sm:mt-0">
-            <Link href="#">
+            {/* <Link href="#">
               <svg
                 width="35"
                 height="35"
@@ -162,10 +157,10 @@ const Footer: React.FC = () => {
                 </defs>
               </svg>
 
-              <span className="sr-only">Discord</span>
-            </Link>
+              <span className="sr-only">GitHub</span>
+            </Link> */}
 
-            <Link href="#">
+            <Link href="https://t.me/+HQ_eHaXmF-1lZDc1">
               <svg
                 width="35"
                 height="35"
@@ -201,7 +196,7 @@ const Footer: React.FC = () => {
               <span className="sr-only">Telegram</span>
             </Link>
 
-            <Link href="#">
+            <Link href="https://twitter.com/strkfarm">
               <svg
                 width="36"
                 height="35"

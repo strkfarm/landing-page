@@ -91,7 +91,7 @@ const WhyUs: React.FC = () => {
           investing wisely would be the smartest move you&apos;ll make!
         </p>
         <Link
-          href="/dapp"
+          href="https://app.strkfarm.xyz"
           className="rounded-full bg-gradient-to-r from-[#6F4FF2] to-[#61FCAE] px-4 py-2 text-sm font-bold text-[#111119]"
         >
           Launch Dapp
