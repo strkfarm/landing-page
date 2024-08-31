@@ -23,7 +23,7 @@ const navLinks = [
   },
   {
     label: 'Community Programs',
-    href: 'https://docs.strkfarm.xyz/p/community/og-farmer-nft-campaign',
+    href: 'https://docs.strkfarm.xyz/p/community',
   },
   {
     label: 'Docs',
