@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from 'next/image';
+import Link from 'next/link';
 import MaxWidthWrapper from './MaxWidthWrapper';
 
 const Carousel: React.FC = () => {
@@ -36,49 +37,57 @@ const Carousel: React.FC = () => {
       <div ref={sliderRef} className="keen-slider -z-50">
         <div className="keen-slider__slide number-slide1 flex items-center justify-center">
           <div className="relative h-[250px] sm:h-[300px] lg:h-[400px] w-[90%] bg-black rounded-2xl">
-            <Image
-              src="/tweet1.png"
-              alt="tweet1"
-              fill
-              objectFit="contain"
-              className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
-            />
+            <Link target='_blank' href='https://x.com/IamEnergyI/status/1827746502514544777'>
+              <Image
+                src="/tweet1.png"
+                alt="tweet1"
+                fill
+                objectFit="contain"
+                className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+              />
+            </Link>
           </div>
         </div>
 
         <div className="keen-slider__slide number-slide2 flex items-center justify-center">
           <div className="relative h-[250px] sm:h-[300px] lg:h-[400px] w-[90%] bg-black rounded-2xl">
-            <Image
-              src="/tweet2.png"
-              alt="tweet2"
-              fill
-              objectFit="contain"
-              className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
-            />
+            <Link target='_blank' href='https://x.com/akashneelesh/status/1814705345555582980'>
+              <Image
+                src="/tweet2.png"
+                alt="tweet2"
+                fill
+                objectFit="contain"
+                className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+              />
+            </Link>
           </div>
         </div>
 
         <div className="keen-slider__slide number-slide3 flex items-center justify-center">
           <div className="relative h-[250px] sm:h-[300px] lg:h-[400px] w-[90%] bg-black rounded-2xl">
-            <Image
-              src="/tweet3.png"
-              alt="tweet3"
-              fill
-              objectFit="contain"
-              className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
-            />
+            <Link target='_blank' href='https://x.com/odin_free/status/1772202995997937850'>
+              <Image
+                src="/tweet3.png"
+                alt="tweet3"
+                fill
+                objectFit="contain"
+                className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+              />
+            </Link>
           </div>
         </div>
 
         <div className="keen-slider__slide number-slide4 flex items-center justify-center">
           <div className="relative h-[250px] sm:h-[300px] lg:h-[400px] w-[90%] bg-black rounded-2xl">
-            <Image
-              src="/tweet4.png"
-              alt="tweet4"
-              fill
-              objectFit="contain"
-              className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
-            />
+            <Link target='_blank' href='https://x.com/dave_degeen/status/1780644927258423775'>
+              <Image
+                src="/tweet4.png"
+                alt="tweet4"
+                fill
+                objectFit="contain"
+                className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+              />
+            </Link>
           </div>
         </div>
       </div>
