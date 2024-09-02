@@ -1,19 +1,28 @@
 "use client";
 
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { TOKENS } from "@/constants";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const animation = { duration: 40000, easing: (t: number) => t };
 
 const HeroSection: React.FC = () => {
+  const [tickerApys, setTickerApys] = useState([
+    { token: "STRK", apy: 0 },
+    { token: "USDC", apy: 0 },
+    { token: "ETH", apy: 0 },
+  ])
+
   const [ref, _slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "free",
     slides: {
-      perView: 3,
+      perView: 2,
     },
     renderMode: "performance",
     drag: false,
@@ -47,6 +56,34 @@ const HeroSection: React.FC = () => {
       s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
   });
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["apys"],
+    queryFn: async () => {
+      const { data } = await axios.get('https://beta.strkfarm.xyz/api/strategies')
+      return data
+    }
+  });
+
+  const strkTokenAddress = TOKENS.find((token) => token.name === "STRK")?.token;
+  const usdcTokenAddress = TOKENS.find((token) => token.name === "USDC")?.token;
+  const ethTokenAddress = TOKENS.find((token) => token.name === "ETH")?.token;
+
+  useEffect(() => {
+    if (data) {
+      let strkApy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === strkTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)?.apy
+
+      let usdcApy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === usdcTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)?.apy
+
+      let ethApy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === ethTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)?.apy
+
+      setTickerApys([
+        { token: "STRK", apy: strkApy },
+        { token: "USDC", apy: usdcApy },
+        { token: "ETH", apy: ethApy },
+      ]);
+    }
+  }, [data, ethTokenAddress, strkTokenAddress, usdcTokenAddress])
 
   return (
     <MaxWidthWrapper className="relative grid-cols-5 pb-20 sm:pb-32 lg:pb-52 lg:grid lg:gap-x-8 lg:pt-32">
@@ -82,39 +119,14 @@ const HeroSection: React.FC = () => {
 
           <div
             ref={ref}
-            // onMouseOver={() => {
-            //   slider.current?.animator.stop();
-            // }}
-            // onMouseLeave={() => {
-            //   slider.current?.animator.start([
-            //     {
-            //       distance: 0,
-            //       duration: 5,
-            //       easing: animation.easing,
-            //     },
-            //   ]);
-            // }}
             className="!hidden keen-slider mt-16 lg:!flex !w-[85%] items-center !rounded-lg border border-white/20 bg-gradient-to-r from-[#372B70] to-[#4F4875] px-5 py-2 font-semibold lg:mt-[4.5rem]"
           >
-            <div className="keen-slider__slide z-10 select-all number-slide1 flex items-center text-nowrap text-sm">
-              STRK 20% APR
-            </div>
-
-            <div className="keen-slider__slide z-10 select-all number-slide2 flex items-center text-nowrap text-sm">
-              USDT 25%
-            </div>
-
-            <div className="keen-slider__slide z-10 select-all number-slide3 flex items-center text-nowrap text-sm">
-              STRK 20%
-            </div>
-
-            <div className="keen-slider__slide z-10 select-all number-slide2 flex items-center text-nowrap text-sm">
-              USDT 25%
-            </div>
-
-            <div className="keen-slider__slide z-10 select-all number-slide3 flex items-center text-nowrap text-sm">
-              STRK 20%
-            </div>
+            {tickerApys.map((tickerApy, i) => (
+              <div key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm`}>
+                {tickerApy.token} {!isLoading && (tickerApy.apy * 100).toFixed(2)}
+                {isLoading && <div className='h-5 mx-1 w-10 animate-pulse rounded-md bg-gradient-to-r from-[#887eb9] to-[#68628e]' />}%
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -241,30 +253,16 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-
       <div
         ref={ref}
         className="lg:!hidden keen-slider mt-24 flex !w-full items-center !rounded-lg border border-white/20 bg-gradient-to-r from-[#372B70] to-[#4F4875] px-5 py-2 font-semibold mx-auto"
       >
-        <div className="keen-slider__slide z-10 select-all number-slide1 flex items-center text-nowrap text-sm">
-          STRK 20% APR
-        </div>
-
-        <div className="keen-slider__slide z-10 select-all number-slide2 flex items-center text-nowrap text-sm">
-          USDT 25%
-        </div>
-
-        <div className="keen-slider__slide z-10 select-all number-slide3 flex items-center text-nowrap text-sm">
-          STRK 20%
-        </div>
-
-        <div className="keen-slider__slide z-10 select-all number-slide2 flex items-center text-nowrap text-sm">
-          USDT 25%
-        </div>
-
-        <div className="keen-slider__slide z-10 select-all number-slide3 flex items-center text-nowrap text-sm">
-          STRK 20%
-        </div>
+        {tickerApys.map((tickerApy, i) => (
+          <div key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm`}>
+            {tickerApy.token} {!isLoading && (tickerApy.apy * 100).toFixed(2)}
+            {isLoading && <div className='h-5 mx-1 w-10 animate-pulse rounded-md bg-gradient-to-r from-[#887eb9] to-[#68628e]' />}%
+          </div>
+        ))}
       </div>
     </MaxWidthWrapper>
   );

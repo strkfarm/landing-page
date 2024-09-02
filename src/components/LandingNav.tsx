@@ -4,15 +4,11 @@ import React from 'react';
 
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from 'lucide-react';
+import { Icons } from './Icons';
 import MaxWidthWrapper from './MaxWidthWrapper';
 import RunningBanner from './RunningBanner';
 
@@ -32,10 +28,6 @@ const navLinks = [
   {
     label: 'FAQ',
     href: 'https://docs.strkfarm.xyz/p/faq',
-  },
-  {
-    label: 'Social Media',
-    href: 'https://twitter.com/strkfarm',
   },
 ];
 
@@ -61,6 +53,14 @@ const LandingNav: React.FC = () => {
                 {link.label}
               </Link>
             ))}
+
+            <Link
+              href="https://t.me/+HQ_eHaXmF-1lZDc1"
+              target='_blank'
+              className="text-sm text-white opacity-80"
+            >
+              <Icons.tg />
+            </Link>
           </div>
 
           <div className="hidden lg:flex h-full items-center space-x-4">

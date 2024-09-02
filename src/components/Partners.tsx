@@ -1,14 +1,11 @@
 'use client'
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import Link from "next/link";
 import Stats from "./Stats";
-
-const client = new QueryClient();
 
 const Partners: React.FC = () => {
   return (
@@ -24,25 +21,22 @@ const Partners: React.FC = () => {
         <Link href='https://www.starknet.io/' className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
           <Image src="/starknet.svg" alt="starknet" fill objectFit="contain" />
         </Link>
-        <Link href='https://nimbora.io/' className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
+        <Link href='https://zklend.com/' className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
           <Image src="/zklend.svg" alt="zklend" fill objectFit="contain" />
         </Link>
-        <Link href='https://zklend.com/' className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
+        <Link href='https://nostra.finance/' className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
           <Image src="/nostra.svg" alt="zklend" fill objectFit="contain" />
         </Link>
         <Link href='https://www.pragma.build/' className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
           <Image src="/pragma.svg" alt="zklend" fill objectFit="contain" />
         </Link>
-        <Link href='https://nostra.finance/' className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
+        <Link href='https://nimbora.io/' className="relative w-[152px] h-[34px] lg:w-[165px] lg:h-[44px]">
           <Image src="/nimbora.svg" alt="zklend" fill objectFit="contain" />
         </Link>
       </div>
 
-      <QueryClientProvider client={client}>
-        <Stats />
-      </QueryClientProvider>
+      <Stats />
     </MaxWidthWrapper>
-
   );
 };
 
