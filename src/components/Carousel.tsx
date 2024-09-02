@@ -29,26 +29,54 @@ const Carousel: React.FC = () => {
     <MaxWidthWrapper className="z-20 mt-16 lg:mt-56 relative px-0">
       <div className="w-[793px] h-[787px] absolute -left-[25%] -top-[15%] rounded-full bg-gradient-to-r from-[#61FCAE1A] to-[#1111191A] blur-3xl -z-50" />
 
+      <h5 className="mb-8 bg-gradient-to-r from-[#B0F6FF] to-[#61FCAE] bg-clip-text text-center text-2xl font-medium text-transparent">
+        What our community says?
+      </h5>
+
       <div ref={sliderRef} className="keen-slider -z-50">
         <div className="keen-slider__slide number-slide1 flex items-center justify-center">
-          <div className="relative h-[127px] sm:h-[155px] lg:h-[343px] w-[90%]">
+          <div className="relative h-[250px] sm:h-[300px] lg:h-[400px] w-[90%] bg-black rounded-2xl">
             <Image
-              src="/c1.svg"
-              alt="c1"
+              src="/tweet1.png"
+              alt="tweet1"
               fill
-              objectFit="cover"
+              objectFit="contain"
               className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
             />
           </div>
         </div>
 
         <div className="keen-slider__slide number-slide2 flex items-center justify-center">
-          <div className="relative h-[127px] sm:h-[155px] lg:h-[343px] w-[90%]">
+          <div className="relative h-[250px] sm:h-[300px] lg:h-[400px] w-[90%] bg-black rounded-2xl">
             <Image
-              src="/c2.svg"
-              alt="c1"
+              src="/tweet2.png"
+              alt="tweet2"
               fill
-              objectFit="cover"
+              objectFit="contain"
+              className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+            />
+          </div>
+        </div>
+
+        <div className="keen-slider__slide number-slide3 flex items-center justify-center">
+          <div className="relative h-[250px] sm:h-[300px] lg:h-[400px] w-[90%] bg-black rounded-2xl">
+            <Image
+              src="/tweet3.png"
+              alt="tweet3"
+              fill
+              objectFit="contain"
+              className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+            />
+          </div>
+        </div>
+
+        <div className="keen-slider__slide number-slide4 flex items-center justify-center">
+          <div className="relative h-[250px] sm:h-[300px] lg:h-[400px] w-[90%] bg-black rounded-2xl">
+            <Image
+              src="/tweet4.png"
+              alt="tweet4"
+              fill
+              objectFit="contain"
               className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
             />
           </div>
@@ -61,7 +89,7 @@ const Carousel: React.FC = () => {
             onClick={(e: any) =>
               e.stopPropagation() || instanceRef.current?.prev()
             }
-            className="absolute hidden lg:flex left-[10%] top-[45%] z-50 w-fit cursor-pointer rounded-full bg-white p-0.5"
+            className="absolute hidden lg:flex left-[10%] top-[52%] z-50 w-fit cursor-pointer rounded-full bg-white p-0.5"
           >
             <ChevronLeft className="size-5 text-black" />
           </div>
@@ -70,7 +98,7 @@ const Carousel: React.FC = () => {
             onClick={(e: any) =>
               e.stopPropagation() || instanceRef.current?.next()
             }
-            className="absolute hidden lg:flex right-[10%] top-[45%] z-50 w-fit cursor-pointer rounded-full bg-white p-0.5"
+            className="absolute hidden lg:flex right-[10%] top-[52%] z-50 w-fit cursor-pointer rounded-full bg-white p-0.5"
           >
             <ChevronRight className="size-5 text-black" />
           </div>
