@@ -43,7 +43,7 @@ const Carousel: React.FC = () => {
                 alt="tweet1"
                 fill
                 objectFit="contain"
-                className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+                className="w-[90%] rounded-[1rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
               />
             </Link>
           </div>
@@ -57,7 +57,7 @@ const Carousel: React.FC = () => {
                 alt="tweet2"
                 fill
                 objectFit="contain"
-                className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+                className="w-[90%] rounded-[1rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
               />
             </Link>
           </div>
@@ -71,7 +71,7 @@ const Carousel: React.FC = () => {
                 alt="tweet3"
                 fill
                 objectFit="contain"
-                className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+                className="w-[90%] rounded-[1rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
               />
             </Link>
           </div>
@@ -85,7 +85,7 @@ const Carousel: React.FC = () => {
                 alt="tweet4"
                 fill
                 objectFit="contain"
-                className="w-[90%] rounded-[1.3rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
+                className="w-[90%] rounded-[1rem] lg:rounded-3xl lg:border-none border border-[#A1A1ED4D]"
               />
             </Link>
           </div>
