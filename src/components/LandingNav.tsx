@@ -74,8 +74,8 @@ const LandingNav: React.FC = () => {
 
 
           <Sheet>
-            <SheetTrigger className='lg:hidden'>
-              <Menu className='text-white' />
+            <SheetTrigger className='lg:hidden text-white'>
+              <Menu className='text-white dark:text-white' />
             </SheetTrigger>
             <SheetContent className='bg-gradient-to-r from-[#111119] to-[#182123] border-[#182123]'>
               <div className="mt-16 flex flex-col items-center gap-4 sm:gap-6">

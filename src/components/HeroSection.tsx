@@ -122,7 +122,7 @@ const HeroSection: React.FC = () => {
             className="!hidden keen-slider mt-16 lg:!flex !w-[85%] items-center !rounded-lg border border-white/20 bg-gradient-to-r from-[#372B70] to-[#4F4875] px-5 py-2 font-semibold lg:mt-[4.5rem]"
           >
             {tickerApys.map((tickerApy, i) => (
-              <div key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm`}>
+              <div key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm text-white`}>
                 {tickerApy.token} {!isLoading && (tickerApy.apy * 100).toFixed(2)}
                 {isLoading && <div className='h-5 mx-1 w-10 animate-pulse rounded-md bg-gradient-to-r from-[#887eb9] to-[#68628e]' />}%
               </div>
@@ -258,7 +258,7 @@ const HeroSection: React.FC = () => {
         className="lg:!hidden keen-slider mt-24 flex !w-full items-center !rounded-lg border border-white/20 bg-gradient-to-r from-[#372B70] to-[#4F4875] px-5 py-2 font-semibold mx-auto"
       >
         {tickerApys.map((tickerApy, i) => (
-          <div key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm`}>
+          <div key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm text-white`}>
             {tickerApy.token} {!isLoading && (tickerApy.apy * 100).toFixed(2)}
             {isLoading && <div className='h-5 mx-1 w-10 animate-pulse rounded-md bg-gradient-to-r from-[#887eb9] to-[#68628e]' />}%
           </div>

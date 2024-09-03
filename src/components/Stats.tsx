@@ -44,7 +44,7 @@ const Stats = () => {
                 <h4 className="text-white/90 text-lg">TVL</h4>
 
                 {tvlLoading ? (
-                    <div className='h-10 w-32 animate-pulse bg-gradient-to-r from-[#36735e] to-[#295446] rounded-lg' />
+                    <div className='h-12 w-32 animate-pulse bg-gradient-to-r from-[#36735e] to-[#295446] rounded-lg' />
                 ) : (
                     <span className="font-bold text-[#61EDAA] text-5xl">
                         ${(tvlData / 1000).toFixed(1)}k
@@ -58,7 +58,7 @@ const Stats = () => {
                 </h4>
 
                 {isLoading ? (
-                    <div className='h-10 w-28 animate-pulse bg-gradient-to-r from-[#36735e] to-[#295446] rounded-lg' />
+                    <div className='h-12 w-28 animate-pulse bg-gradient-to-r from-[#36735e] to-[#295446] rounded-lg' />
                 ) : (
                     <span className="font-bold text-[#61EDAA] text-5xl">
                         ${(generatedRewardsData?.totalStrkHarvested?.USDValue / 1000).toFixed(1)}k
