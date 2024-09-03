@@ -47,7 +47,7 @@ const Stats = () => {
                     <div className='h-10 w-32 animate-pulse bg-gradient-to-r from-[#36735e] to-[#295446] rounded-lg' />
                 ) : (
                     <span className="font-bold text-[#61EDAA] text-5xl">
-                        ${(tvlData / 1000).toFixed(0)}k
+                        ${(tvlData / 1000).toFixed(1)}k
                     </span>
                 )}
             </div>

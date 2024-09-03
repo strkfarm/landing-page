@@ -74,18 +74,16 @@ const LandingNav: React.FC = () => {
 
 
           <Sheet>
-            <SheetTrigger asChild className='lg:hidden'>
-              <button>
-                <Menu />
-              </button>
+            <SheetTrigger className='lg:hidden'>
+              <Menu className='text-white' />
             </SheetTrigger>
-            <SheetContent>
-              <div className="mt-16 flex flex-col items-center gap-6 sm:gap-8">
+            <SheetContent className='bg-gradient-to-r from-[#111119] to-[#182123] border-[#182123]'>
+              <div className="mt-16 flex flex-col items-center gap-4 sm:gap-6">
                 {navLinks.map((link) => (
                   <Link
                     href={link.href}
                     key={link.label}
-                    className="text-sm text-white opacity-80 hover:underline transition-all"
+                    className="text-sm py-2 w-full text-center text-white opacity-80 hover:underline transition-all"
                   >
                     {link.label}
                   </Link>
