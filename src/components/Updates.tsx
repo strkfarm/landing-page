@@ -27,7 +27,7 @@ const Updates = () => {
       </h5>
 
       <div className="mt-6 flex flex-col items-center gap-6 md:flex-row md:gap-8 justify-center">
-        <Link href='https://x.com/strkfarm/status/1788558092109775029' className="cursor-pointer relative z-20 w-fit rounded-2xl border border-[#A1A1ED66] bg-[#1F1F2E] px-8 py-6">
+        <Link target="_blank" href='https://x.com/strkfarm/status/1788558092109775029' className="cursor-pointer relative z-20 w-fit rounded-2xl border border-[#A1A1ED66] bg-[#1F1F2E] px-8 py-6">
           <Image
             src="og-farmer.svg"
             width={265}
@@ -49,7 +49,7 @@ const Updates = () => {
           </div>
         </Link>
 
-        <Link href='https://x.com/strkfarm/status/1787783906982260881' className="cursor-pointer relative z-20 w-fit rounded-2xl border border-[#A1A1ED66] bg-[#1F1F2E] px-8 py-6">
+        <Link target="_blank" href='https://x.com/strkfarm/status/1787783906982260881' className="cursor-pointer relative z-20 w-fit rounded-2xl border border-[#A1A1ED66] bg-[#1F1F2E] px-8 py-6">
           <Image
             src="starknet-seed-grant.svg"
             width={265}
@@ -71,7 +71,7 @@ const Updates = () => {
           </div>
         </Link>
 
-        <Link href='https://x.com/strkfarm/status/1817886800318513273' className="cursor-pointer relative z-20 w-fit rounded-2xl border border-[#A1A1ED66] bg-[#1F1F2E] px-8 py-6">
+        <Link target="_blank" href='https://x.com/strkfarm/status/1817886800318513273' className="cursor-pointer relative z-20 w-fit rounded-2xl border border-[#A1A1ED66] bg-[#1F1F2E] px-8 py-6">
           <Image
             src="yield-strategy.svg"
             width={265}
