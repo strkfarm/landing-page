@@ -55,10 +55,10 @@ const WhyUs: React.FC = () => {
               className="rounded-md"
             />
             <p className="text-center text-2xl text-white/80 md:text-start">
-              Benefit from custom
+              Benefit from custom{" "}
               <br className="hidden lg:block" />
               strategies and
-              <br className="hidden lg:block" />
+              <br className="hidden lg:block" />{" "}
               managed market risk
             </p>
           </div>
