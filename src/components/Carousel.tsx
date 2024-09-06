@@ -25,7 +25,6 @@ const Carousel: React.FC = () => {
     },
   })
 
-
   return (
     <MaxWidthWrapper className="z-20 mt-16 lg:mt-56 relative px-0">
       <div className="w-[793px] h-[787px] absolute -left-[25%] -top-[15%] rounded-full bg-gradient-to-r from-[#61FCAE1A] to-[#1111191A] blur-3xl -z-50" />

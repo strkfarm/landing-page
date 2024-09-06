@@ -7,15 +7,16 @@ import axios from "axios";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export const animation = { duration: 40000, easing: (t: number) => t };
 
 const HeroSection: React.FC = () => {
   const [tickerApys, setTickerApys] = useState([
-    { token: "STRK", apy: 0 },
-    { token: "USDC", apy: 0 },
-    { token: "ETH", apy: 0 },
+    { token: "STRK", apy: 0, href: '' },
+    { token: "USDC", apy: 0, href: '' },
+    { token: "ETH", apy: 0, href: '' },
   ])
 
   const [ref, _slider] = useKeenSlider<HTMLDivElement>({
@@ -71,16 +72,16 @@ const HeroSection: React.FC = () => {
 
   useEffect(() => {
     if (data) {
-      let strkApy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === strkTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)?.apy
+      let strkStrategy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === strkTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)
 
-      let usdcApy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === usdcTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)?.apy
+      let usdcStrategy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === usdcTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)
 
-      let ethApy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === ethTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)?.apy
+      let ethStrategy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === ethTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)
 
       setTickerApys([
-        { token: "STRK", apy: strkApy },
-        { token: "USDC", apy: usdcApy },
-        { token: "ETH", apy: ethApy },
+        { token: "STRK", apy: strkStrategy?.apy, href: `https://strkfarm.xyz/strategy/${strkStrategy?.id}` },
+        { token: "USDC", apy: usdcStrategy?.apy, href: `https://strkfarm.xyz/strategy/${usdcStrategy?.id}` },
+        { token: "ETH", apy: ethStrategy?.apy, href: `https://strkfarm.xyz/strategy/${ethStrategy?.id}` },
       ]);
     }
   }, [data, ethTokenAddress, strkTokenAddress, usdcTokenAddress])
@@ -122,10 +123,10 @@ const HeroSection: React.FC = () => {
             className="!hidden keen-slider mt-16 lg:!flex !w-[85%] items-center !rounded-lg border border-white/20 bg-gradient-to-r from-[#372B70] to-[#4F4875] px-5 py-2 font-semibold lg:mt-[4.5rem]"
           >
             {tickerApys.map((tickerApy, i) => (
-              <div key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm text-white`}>
+              <Link target="_blank" href={tickerApy.href} key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm text-white hover:underline`}>
                 {tickerApy.token} {!isLoading && (tickerApy.apy * 100).toFixed(2)}
                 {isLoading && <div className='h-5 mx-1 w-10 animate-pulse rounded-md bg-gradient-to-r from-[#887eb9] to-[#68628e]' />}%
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -258,10 +259,11 @@ const HeroSection: React.FC = () => {
         className="lg:!hidden keen-slider mt-24 flex !w-full items-center !rounded-lg border border-white/20 bg-gradient-to-r from-[#372B70] to-[#4F4875] px-5 py-2 font-semibold mx-auto"
       >
         {tickerApys.map((tickerApy, i) => (
-          <div key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm text-white`}>
+          <Link
+            target="_blank" href={tickerApy.href} key={i} className={`keen-slider__slide z-10 select-all number-slide${i + 1} flex items-center text-nowrap text-sm text-white hover:underline`}>
             {tickerApy.token} {!isLoading && (tickerApy.apy * 100).toFixed(2)}
             {isLoading && <div className='h-5 mx-1 w-10 animate-pulse rounded-md bg-gradient-to-r from-[#887eb9] to-[#68628e]' />}%
-          </div>
+          </Link>
         ))}
       </div>
     </MaxWidthWrapper>
