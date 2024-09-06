@@ -79,9 +79,9 @@ const HeroSection: React.FC = () => {
       let ethStrategy = data?.strategies?.filter((strategy: any) => strategy.depositToken[0] === ethTokenAddress).reduce((prev: any, current: any) => (prev.apy > current.apy) ? prev : current)
 
       setTickerApys([
-        { token: "STRK", apy: strkStrategy?.apy, href: `https://strkfarm.xyz/strategy/${strkStrategy?.id}` },
-        { token: "USDC", apy: usdcStrategy?.apy, href: `https://strkfarm.xyz/strategy/${usdcStrategy?.id}` },
-        { token: "ETH", apy: ethStrategy?.apy, href: `https://strkfarm.xyz/strategy/${ethStrategy?.id}` },
+        { token: "STRK", apy: strkStrategy?.apy, href: `https://app.strkfarm.xyz/strategy/${strkStrategy?.id}` },
+        { token: "USDC", apy: usdcStrategy?.apy, href: `https://app.strkfarm.xyz/strategy/${usdcStrategy?.id}` },
+        { token: "ETH", apy: ethStrategy?.apy, href: `https://app.strkfarm.xyz/strategy/${ethStrategy?.id}` },
       ]);
     }
   }, [data, ethTokenAddress, strkTokenAddress, usdcTokenAddress])
