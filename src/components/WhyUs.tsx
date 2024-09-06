@@ -74,10 +74,10 @@ const WhyUs: React.FC = () => {
               className="rounded-md"
             />
             <p className="text-center text-2xl text-white/80 md:text-start">
-              Designed for crypto
+              Designed for crypto{" "}
               <br className="hidden lg:block" />
               beginners, DeFi
-              <br className="hidden lg:block" />
+              <br className="hidden lg:block" />{" "}
               devotees, and Dapp <br className="hidden lg:block" />
               treasuries.
             </p>

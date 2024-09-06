@@ -5,7 +5,6 @@ import LandingNav from "@/components/LandingNav";
 import Partners from "@/components/Partners";
 import Updates from "@/components/Updates";
 import WhyUs from "@/components/WhyUs";
-import Image from "next/image";
 
 export default function Home() {
   return (
