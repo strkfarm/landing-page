@@ -3,6 +3,11 @@ const nextConfig = {
     async redirects() {
         return [
           {
+            source: '/audit',
+            destination: 'https://static-assets-8zct.onrender.com/strkfarm/audit_report.pdf',
+            permanent: true,
+          },
+          {
             source: '/r/:path*',
             destination: 'https://app.strkfarm.xyz/r/:path*',
             permanent: true,

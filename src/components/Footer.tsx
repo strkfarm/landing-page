@@ -36,13 +36,9 @@ const navLinks = [
         href: "https://app.onlydust.com/p/strkfarm",
       },
       {
-        label: "Audit (Coming soon)",
-        href: "#",
+        label: "Audit",
+        href: "/audit",
       },
-      // {
-      //   label: "Blog",
-      //   href: "#",
-      // },
     ],
   },
   {
@@ -93,9 +89,7 @@ const Footer: React.FC = () => {
                 <ul className="text-sm text-gray-400">
                   {navLink.links.map((link) => (
                     <li className="mb-4" key={link.label}>
-                      <Link href={link.href} className={cn("hover:underline", {
-                        'opacity-80 hover:no-underline cursor-default': link.label === "Audit (Coming soon)",
-                      })}>
+                      <Link href={link.href} className="hover:underline">
                         {link.label}
                       </Link>
                     </li>

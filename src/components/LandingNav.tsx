@@ -83,8 +83,8 @@ const LandingNav: React.FC = () => {
 
 
           <Sheet>
-            <SheetTrigger className='lg:hidden text-white'>
-              <Menu className='text-white dark:text-white' />
+            <SheetTrigger className='lg:hidden'>
+              <Menu className='text-white' />
             </SheetTrigger>
             <SheetContent className='bg-gradient-to-r from-[#111119] to-[#182123] border-[#182123]'>
               <div className="mt-16 flex flex-col items-center gap-4 sm:gap-6">
@@ -97,6 +97,12 @@ const LandingNav: React.FC = () => {
                     {link.label}
                   </Link>
                 ))}
+                <Link
+                  href="https://app.strkfarm.xyz"
+                  className="rounded-full bg-gradient-to-r from-[#6F4FF2] to-[#61FCAE] px-4 py-2 text-sm font-semibold text-[#111119]"
+                >
+                  Launch Dapp
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
