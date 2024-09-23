@@ -4,7 +4,7 @@ const nextConfig = {
         return [
           {
             source: '/audit',
-            destination: 'https://static-assets-8zct.onrender.com/strkfarm/audit_report.pdf',
+            destination: 'https://drive.google.com/file/d/1qgxM4AtyUcrpD7V8fNcB4tFI7V7ajf-V/view?usp=sharing',
             permanent: true,
           },
           {
