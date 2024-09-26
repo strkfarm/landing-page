@@ -56,7 +56,7 @@ const LandingNav: React.FC = () => {
 
             <div className="flex items-center gap-3">
               <Link
-                href="https://t.me/+HQ_eHaXmF-1lZDc1"
+                href="https://t.me/+kNCm2Q_kj7I1ZTll"
                 target='_blank'
                 className="text-sm text-white opacity-80"
               >
