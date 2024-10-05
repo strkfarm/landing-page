@@ -38,6 +38,16 @@ const Stats = () => {
         console.error(error);
     }
 
+    const formattedTvlData = (tvlData: number) => {
+        if (tvlData >= 1000000) {
+          return `${(tvlData / 1000000).toFixed(2)}m`;
+        } else if (tvlData >= 1000) {
+          return `${(tvlData / 1000).toFixed(2)}k`;
+        } else {
+          return tvlData.toString();
+        }
+      };
+
     return (
         <div className="mt-32 flex flex-col gap-10 lg:flex-row justify-around rounded-2xl bg-opacity-80 bg-gradient-to-r from-[#2E2C5C] to-[#295446] py-8">
             <div className="flex flex-col items-center justify-center gap-3">
@@ -47,7 +57,7 @@ const Stats = () => {
                     <div className='h-12 w-32 animate-pulse bg-gradient-to-r from-[#36735e] to-[#295446] rounded-lg' />
                 ) : (
                     <span className="font-bold text-[#61EDAA] text-5xl">
-                        ${(tvlData / 1000).toFixed(1)}k
+                        {formattedTvlData(tvlData)}
                     </span>
                 )}
             </div>
