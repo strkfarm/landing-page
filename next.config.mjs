@@ -3,6 +3,11 @@ const nextConfig = {
     async redirects() {
         return [
           {
+            source: '/discord',
+            destination: 'https://discord.gg/JA8UnuaZSw',
+            permanent: true,
+          },
+          {
             source: '/audit',
             destination: 'https://drive.google.com/file/d/1qgxM4AtyUcrpD7V8fNcB4tFI7V7ajf-V/view?usp=sharing',
             permanent: true,

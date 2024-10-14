@@ -131,6 +131,11 @@ const Footer: React.FC = () => {
               Terms and Conditions
             </Link>
 
+            <Link target="_blank" href="https://discord.gg/JA8UnuaZSw">
+              <Icons.discord />
+              <span className="sr-only">Discord</span>
+            </Link>
+
             <Link target="_blank" href="https://t.me/+kNCm2Q_kj7I1ZTll">
               <Icons.tg />
               <span className="sr-only">Telegram</span>
